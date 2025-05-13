@@ -134,7 +134,7 @@
                 <select id="zoom-select" onchange="applyZoom()">
                     <option value="1">Zoom 100%</option>
                     <option value="0.75">Zoom 75%</option>
-                    <option value="0.5">Zoom 50%</option>
+                    <option value="0.66">Zoom 66%</option>  <option value="0.5">Zoom 50%</option>
                     <option value="1.5">Zoom 150%</option>
                 </select>
             </td>
@@ -210,9 +210,15 @@
     </table>
 
     <script>
-        function applyZoom() {
-            let zoomLevel = document.getElementById("zoom-select").value;
+        function applyZoom(initialLoad) {
+            let zoomSelect = document.getElementById("zoom-select");
+            let zoomLevel = zoomSelect.value;
+
             document.body.style.zoom = zoomLevel;
+
+            if (!initialLoad) {
+                localStorage.setItem('zoomLevel', zoomLevel);
+            }
         }
 
         function generateBinaryCode() {
@@ -301,6 +307,15 @@
         });
 
         document.getElementById("apply-button").addEventListener("click", applyBinaryCode);
+
+        // Load saved zoom level
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let savedZoomLevel = localStorage.getItem('zoomLevel');
+            if (savedZoomLevel) {
+                document.getElementById("zoom-select").value = savedZoomLevel;
+                applyZoom(true); // Apply zoom without saving again
+            }
+        });
     </script>
 
 </body>
