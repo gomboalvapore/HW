@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure13 Map10</title>
+    <style>
+    body {
+        background-color: #808080; /* Grigio a tinta media */
+    }
+    table {
+        border-collapse: collapse;
+        margin: 20px auto;
+        background-color: #d3d3d3; /* Grigio a tinta chiara */
+        width: auto; /* Adatta la larghezza al contenuto */
+    }
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+    }
+    th:nth-child(1),
+    td:nth-child(1) {
+        min-width: 300px; /* Imposta una larghezza minima per la prima colonna */
+    }
+    th:nth-child(2),
+    td:nth-child(2) {
+        white-space: nowrap;
+        width: auto;
+    }
+    th:nth-child(2) {
+        max-width: calc(min-content + 70px); /* Larghezza massima per l'header */
+    }
+    td:nth-child(2) {
+        max-width: calc(min-content + 70px); /* Larghezza massima per la colonna dei bottoni */
+    }
+    .label-sopra {
+        display: block;
+        font-size: 0.8em;
+        color: #777;
+        margin-bottom: 5px;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+    button {
+        padding: 8px 15px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Adventure13 Map10</th>
+                <th>click to copy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="message1" class="label-sopra">Classic - First Player - path2, central </label>
+                    <input type="text" id="message1" value=" 4,8,13,18,22,26,31,36,40,45,44,43,38,33,28 ">
+                </td>
+                <td><button onclick="copyText('message1')">copy</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="message2" class="label-sopra">Classic - Second player - path3 - low + boss </label>
+                    <input type="text" id="message2" value=" 5,9,14,19,23,27,32,37,42,48,51,50,49,46,52 ">
+                </td>
+                <td><button onclick="copyText('message2')">copy</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="message3" class="label-sopra">Classic - third player - path1 - high</label>
+                    <input type="text" id="message3" value=" 3,2,6,11,17,25,30,35,34,29,24,21,17,12,7 ">
+                </td>
+                <td><button onclick="copyText('message3')">copy</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="message4" class="label-sopra">Empty</label>
+                    <input type="text" id="message4" value=" Empty ">
+                </td>
+                <td><button onclick="copyText('message4')">copy</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="message5" class="label-sopra">Empty</label>
+                    <input type="text" id="message5" value=" Empty ">
+                </td>
+                <td><button onclick="copyText('message5')">copy</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="message6" class="label-sopra">Empty</label>
+                    <input type="text" id="message6" value=" Empty ">
+                </td>
+                <td><button onclick="copyText('message6')">copy</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function copyText(inputId) {
+            const inputElement = document.getElementById(inputId);
+            inputElement.select();
+            document.execCommand('copy');
+            inputElement.blur();
+        }
+    </script>
+
+</body>
+</html>

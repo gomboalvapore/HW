@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure13 Map12</title>
+    <style>
+    body {
+        background-color: #808080; /* Grigio a tinta media */
+    }
+    table {
+        border-collapse: collapse;
+        margin: 20px auto;
+        background-color: #d3d3d3; /* Grigio a tinta chiara */
+        width: auto; /* Adatta la larghezza al contenuto */
+    }
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+    }
+    th:nth-child(1),
+    td:nth-child(1) {
+        min-width: 300px; /* Imposta una larghezza minima per la prima colonna */
+    }
+    th:nth-child(2),
+    td:nth-child(2) {
+        white-space: nowrap;
+        width: auto;
+    }
+    th:nth-child(2) {
+        max-width: calc(min-content + 70px); /* Larghezza massima per l'header */
+    }
+    td:nth-child(2) {
+        max-width: calc(min-content + 70px); /* Larghezza massima per la colonna dei bottoni */
+    }
+    .label-sopra {
+        display: block;
+        font-size: 0.8em;
+        color: #777;
+        margin-bottom: 5px;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+    button {
+        padding: 8px 15px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Adventure13 Map12</th>
+                <th>click to copy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="message1" class="label-sopra">NO WAIT - First Player - path1, left </label>
+                    <input type="text" id="message1" value=" 07,02,04,06,16,23,33,23,24,14,26,25,24,17,11 ">
+                </td>
+                <td><button onclick="copyText('message1')">copy</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="message2" class="label-sopra">NO WAIT - Second player - path2 - central + BOSS </label>
+                    <input type="text" id="message2" value=" 09,01,08,12,15,28,29,32,25,26,18,19,20,27 ">
+                </td>
+                <td><button onclick="copyText('message2')">copy</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="message3" class="label-sopra">NO WAIT + solfors - Third player - path3 - right</label>
+                    <input type="text" id="message3" value=" 09,03,05,10,22,31,36,35,29,32,29,30,21,13 ">
+                </td>
+                <td><button onclick="copyText('message3')">copy</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="message4" class="label-sopra">Solfors path 1 - left</label>
+                    <input type="text" id="message4" value=" 07,02,04,06,16,23,33,34,25,24,17,11 ">
+                </td>
+                <td><button onclick="copyText('message4')">copy</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="message5" class="label-sopra">Solfors path 2 - central</label>
+                    <input type="text" id="message5" value=" 08,12,15,28,20,12,14,26,18,19,20,27 ">
+                </td>
+                <td><button onclick="copyText('message5')">copy</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="message6" class="label-sopra">Empty</label>
+                    <input type="text" id="message6" value="Empty">
+                </td>
+                <td><button onclick="copyText('message6')">copy</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function copyText(inputId) {
+            const inputElement = document.getElementById(inputId);
+            inputElement.select();
+            document.execCommand('copy');
+            inputElement.blur();
+        }
+    </script>
+
+</body>
+</html>
