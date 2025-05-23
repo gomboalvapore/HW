@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biggest Mistakes in OSH team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for better readability and spacing */
+        body {
+            font-size: 2em; /* Base text size */
+            background-color: #A3A3A3; /* Light grey background for the body */
+        }
+        .container {
+            max-width: 800px;
+            background-color: #D3D3D3; /* Ensure the content area remains white */
+        }
+        img {
+            max-width: 100%; /* Ensure images are responsive */
+            height: auto;
+            border-radius: 1.5rem; /* Rounded corners */
+        }
+        th, td {
+            padding: 1rem; /* Add some padding to table cells */
+            text-align: center; /* Center align content in cells */
+        }
+        table {
+            width: 100%; /* Make table take full width of container */
+            border-collapse: collapse; /* Remove space between borders */
+            background-color: #AA7742; /* Yellow ochre background */
+        }
+        .image-title {
+            margin-bottom: 0.5rem; /* Space between title and image */
+            font-weight: bold;
+            font-size: 2em; /* Doubled size for the step text */
+        }
+        .step-description {
+            margin-top: 0.5rem; /* Space between title and description */
+            font-size: 1.2em; /* Same size as original text (2em from body * 0.5em = 1em, effectively the original base size of 1em from when it was not doubled) */
+        }
+        /* New style for Installation Steps */
+        th {
+            font-size: 1.3em; /* 30% bigger than the base 1em (which is 2em from body * 0.65 for the 1.3em result) */
+            color: blue;
+        }
+        .clickable-row {
+            cursor: pointer; /* Indicate that the row is clickable */
+        }
+    </style>
+</head>
+<body class="p-6">
+    <div class="container mx-auto p-8 rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold text-center mb-8"> 🍕 5 Biggest Mistakes in OSH team 🍕</h1>
+
+        <table class="mx-auto">
+            <thead>
+                <tr>
+                    <th>Let's see them together</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="clickable-row" >
+                    <td>
+                        <div class="image-title">Mistake 1: Cornelius Weapon Artifact</div>
+                        <div class="step-description">Cornelius' first artifact with its activation <br>
+                        provides magic defense to the entire team. <br>
+                       This prevents ISAAC from charging his ultimate. <br>
+					   The time needed to perform the attack sequence is greatly reduced. <br>
+					   Consequently, the chances of success are also greatly reduced. <br>
+					
+						</div>
+                        <img src="IMG/1Cornyart.jpg" alt="Step 1: Open Extensions">
+                    </td>
+                </tr>
+                <tr class="clickable-row">
+                    <td>
+                        <div class="image-title">Mistake 2: Isaac's first artifact</div>
+                        <div class="step-description">isaac's first artifact should have accurate values. <br>
+                        This artifact provides armor penetration to the entire team <br>
+                        This artifact needs to receive magic attacks to be charged. <br>
+                        Magic attacks come from osh spheres. <br>
+						if armor penetration is too high or at the wrong level, <br>
+						Other heroes, such as Cornelius, will not be able to do the right amount of damage to OSH.
+						<br> in May 2025 the optimal value for this artifact is 114 .
+						<br> Increasing it beyond this level can make things worse.
+						<br> However up to level 118-120 in many cases it does not cause problems.
+						</div>
+                        <img src="IMG/2isaacart.jpg" alt="Step 2: Enable Developer Mode">
+                    </td>
+                </tr>
+                <tr class="clickable-row" >
+                    <td>
+                        <div class="image-title">Mistake 3: Isaac Spring Skin</div>
+                        <div class="step-description"> ISAAC's spring skin increases ISAAC's armor penetration.
+                        <br> This is a disadvantage because it increases the risk of destroying his recharge spheres early.
+						<br> It is even worse than the first artifact
+                        <br> Since it does not offer any stats to other heroes.
+						</div>
+                        <img src="IMG/3isaacskin.jpg" alt="Step 3: Install Tampermonkey">
+                    </td>
+                </tr>
+                 <tr class="clickable-row" >
+                    <td>
+                        <div class="image-title">Mistake 4: Isaac's second artifact </div>
+                        <div class="step-description">isaac's second artifact increases physical attack and armor penetration.
+						<br> the increase in attack damage could also be positive,
+						<br> but armor penetration is highly harmful
+                        <br> for the reasons explained in the previous points.
+						</div>
+                        <img src="IMG/5isaacaer2.jpg" alt="Step 4: Go to Greasy Fork">
+                    </td>
+                </tr>
+                 <tr class="clickable-row" >
+                    <td>
+                        <div class="image-title">Mistake 5: Isaac's Lunar Skin</div>
+                        <div class="step-description">Isaac's lunar skin increases the hero's magic defense.
+						<br> In many cases it can still be within tolerable values.
+						<br> I still advise against upgrading it.
+						<br> Magic damage is used by Isaac to charge up
+						</div>
+                        <img src="IMG/4isaacskin.jpg" alt="Step 5: Hero Wars Helper Installed">
+                        <div class="step-description">if uou have any question
+						<br> please ask help to your best OSH guildmate 🤓
+						</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('.clickable-row');
+            rows.forEach(row => {
+                row.addEventListener('click', function() {
+                    const link = this.dataset.link;
+                    if (link) {
+                        window.open(link, '_blank');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
