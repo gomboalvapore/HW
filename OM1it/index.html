@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Più Grandi Errori nel Team OSH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for better readability and spacing */
+        body {
+            font-size: 2em; /* Base text size */
+            background-color: #A3A3A3; /* Light grey background for the body */
+            font-family: 'Inter', sans-serif; /* Use Inter font */
+        }
+        .container {
+            max-width: 800px;
+            background-color: #D3D3D3; /* Ensure the content area remains white */
+            border-radius: 1.5rem; /* Rounded corners for the container */
+        }
+        img {
+            max-width: 100%; /* Ensure images are responsive */
+            height: auto;
+            border-radius: 1.5rem; /* Rounded corners */
+        }
+        th, td {
+            padding: 1rem; /* Add some padding to table cells */
+            text-align: center; /* Center align content in cells */
+        }
+        table {
+            width: 100%; /* Make table take full width of container */
+            border-collapse: collapse; /* Remove space between borders */
+            background-color: #AA7742; /* Yellow ochre background */
+            border-radius: 1.5rem; /* Rounded corners for the table */
+            overflow: hidden; /* Ensures rounded corners apply to content */
+        }
+        .image-title {
+            margin-bottom: 0.5rem; /* Space between title and image */
+            font-weight: bold;
+            font-size: 2em; /* Doubled size for the step text */
+        }
+        .step-description {
+            margin-top: 0.5rem; /* Space between title and description */
+            font-size: 1.2em; /* Same size as original text (2em from body * 0.5em = 1em, effectively the original base size of 1em from when it was not doubled) */
+        }
+        /* New style for Installation Steps */
+        th {
+            font-size: 1.3em; /* 30% bigger than the base 1em (which is 2em from body * 0.65 for the 1.3em result) */
+            color: blue;
+        }
+        .clickable-row {
+            cursor: pointer; /* Indicate that the row is clickable */
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                font-size: 1.5em; /* Adjust base font size for smaller screens */
+            }
+            .container {
+                padding: 1rem; /* Reduce padding on smaller screens */
+            }
+            .image-title {
+                font-size: 1.5em; /* Adjust title font size */
+            }
+            .step-description {
+                font-size: 1em; /* Adjust description font size */
+            }
+            th {
+                font-size: 1em; /* Adjust table header font size */
+            }
+        }
+    </style>
+</head>
+<body class="p-6">
+    <div class="container mx-auto p-8 rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold text-center mb-8"> 🍕 I 5 Più Grandi Errori nel Team OSH 🍕</h1>
+
+        <table class="mx-auto">
+            <thead>
+                <tr>
+                    <th>Vediamoli Insieme</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="clickable-row">
+                    <td>
+                        <div class="image-title">Errore 1: Primo Artefatto di Cornelius</div>
+                        <div class="step-description">Il primo artefatto di Cornelius, con la sua attivazione, <br> fornisce difesa magica a tutta la squadra. 
+						<br> Questo impedisce a ISAAC di caricare la sua ultimate. <br> Il tempo necessario per eseguire la sequenza di attacco è notevolmente ridotto. 
+						<br> Di conseguenza, anche le possibilità di successo sono notevolmente ridotte.
+                        </div>
+                        <img src="IMG/1Cornyart.jpg" alt="Immagine dell'artefatto di Cornelius">
+                    </td>
+                </tr>
+                <tr class="clickable-row">
+                    <td>
+                        <div class="image-title">Errore 2: Il Primo Artefatto di Isaac</div>
+                        <div class="step-description">Il primo artefatto di Isaac dovrebbe avere valori precisi. <br> Questo artefatto fornisce penetrazione armatura a tutta la squadra. <br> Questo artefatto ha bisogno di ricevere attacchi magici per essere caricato. <br> Gli attacchi magici provengono dalle sfere OSH. 
+						<br> Se la penetrazione armatura è troppo alta o al livello sbagliato, 
+						<br> altri eroi, come Cornelius, non saranno in grado di infliggere il giusto ammontare di danni a OSH. 
+						<br> A maggio 2025 il valore ottimale per questo artefatto è 114. <br> Aumentarlo oltre questo livello può peggiorare le cose. 
+						<br> Tuttavia, fino al livello 118-120 in molti casi non causa problemi.
+                        </div>
+                        <img src="IMG/2isaacart.jpg" alt="Immagine dell'artefatto di Isaac">
+                    </td>
+                </tr>
+                <tr class="clickable-row">
+                    <td>
+                        <div class="image-title">Errore 3: Skin Primavera di Isaac</div>
+                        <div class="step-description">La skin primavera di ISAAC aumenta la penetrazione armatura di ISAAC. 
+						<br> Questo è uno svantaggio perché aumenta il rischio di distruggere le sue sfere di ricarica in anticipo. 
+						<br> È persino peggio del primo artefatto <br> poiché non offre alcuna statistica ad altri eroi.
+                        </div>
+                        <img src="IMG/3isaacskin.jpg" alt="Immagine della skin primavera di Isaac">
+                    </td>
+                </tr>
+                <tr class="clickable-row">
+                    <td>
+                        <div class="image-title">Errore 4: Il Secondo Artefatto di Isaac</div>
+                        <div class="step-description">Il secondo artefatto di Isaac aumenta l'attacco fisico e la penetrazione armatura. 
+						<br> L'aumento del danno da attacco potrebbe anche essere positivo, <br> ma la penetrazione armatura è altamente dannosa 
+						<br> per le ragioni spiegate nei punti precedenti.
+                        </div>
+                        <img src="IMG/5isaacaer2.jpg" alt="Immagine del secondo artefatto di Isaac">
+                    </td>
+                </tr>
+                <tr class="clickable-row">
+                    <td>
+                        <div class="image-title">Errore 5: Skin Lunare di Isaac</div>
+                        <div class="step-description">La skin lunare di Isaac aumenta la difesa magica dell'eroe. 
+						<br> In molti casi può ancora rientrare in valori tollerabili. <br> Sconsiglio comunque di potenziarla. 
+						<br> Il danno magico è usato da Isaac per caricarsi.
+                        </div>
+                        <img src="IMG/4isaacskin.jpg" alt="Immagine della skin lunare di Isaac">
+                        <div class="step-description">Se hai qualche domanda <br> chiedi aiuto al tuo migliore compagno di gilda OSH 🤓
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // JavaScript to handle clickable rows (if they had data-link attributes)
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('.clickable-row');
+            rows.forEach(row => {
+                row.addEventListener('click', function() {
+                    const link = this.dataset.link;
+                    if (link) {
+                        window.open(link, '_blank');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
