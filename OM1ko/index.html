@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSH 팀의 가장 큰 실수</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for better readability and spacing */
+        body {
+            font-size: 2em; /* Base text size */
+            background-color: #A3A3A3; /* Light grey background for the body */
+            font-family: 'Inter', sans-serif; /* Use Inter font */
+        }
+        .container {
+            max-width: 800px;
+            background-color: #D3D3D3; /* Ensure the content area remains white */
+            border-radius: 1.5rem; /* Rounded corners for the container */
+        }
+        img {
+            max-width: 100%; /* Ensure images are responsive */
+            height: auto;
+            border-radius: 1.5rem; /* Rounded corners */
+        }
+        th, td {
+            padding: 1rem; /* Add some padding to table cells */
+            text-align: center; /* Center align content in cells */
+        }
+        table {
+            width: 100%; /* Make table take full width of container */
+            border-collapse: collapse; /* Remove space between borders */
+            background-color: #AA7742; /* Yellow ochre background */
+            border-radius: 1.5rem; /* Rounded corners for the table */
+            overflow: hidden; /* Ensures rounded corners apply to content */
+        }
+        .image-title {
+            margin-bottom: 0.5rem; /* Space between title and image */
+            font-weight: bold;
+            font-size: 2em; /* Doubled size for the step text */
+        }
+        .step-description {
+            margin-top: 0.5rem; /* Space between title and description */
+            font-size: 1.2em; /* Same size as original text (2em from body * 0.5em = 1em, effectively the original base size of 1em from when it was not doubled) */
+        }
+        /* New style for Installation Steps */
+        th {
+            font-size: 1.3em; /* 30% bigger than the base 1em (which is 2em from body * 0.65 for the 1.3em result) */
+            color: blue;
+        }
+        .clickable-row {
+            cursor: pointer; /* Indicate that the row is clickable */
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                font-size: 1.5em; /* Adjust base font size for smaller screens */
+            }
+            .container {
+                padding: 1rem; /* Reduce padding on smaller screens */
+            }
+            .image-title {
+                font-size: 1.5em; /* Adjust title font size */
+            }
+            .step-description {
+                font-size: 1em; /* Adjust description font size */
+            }
+            th {
+                font-size: 1em; /* Adjust table header font size */
+            }
+        }
+    </style>
+</head>
+<body class="p-6">
+    <div class="container mx-auto p-8 rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold text-center mb-8"> 🍕 OSH 팀의 5가지 가장 큰 실수 🍕</h1>
+
+        <table class="mx-auto">
+            <thead>
+                <tr>
+                    <th>함께 살펴봅시다</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="clickable-row">
+                    <td>
+                        <div class="image-title">실수 1: 코르넬리우스 무기 유물</div>
+                        <div class="step-description">코르넬리우스의 첫 번째 유물은 활성화 시 <br> 팀 전체에 마법 방어력을 제공합니다. <br> 이는 아이작이 궁극기를 충전하는 것을 방해합니다. <br> 공격 시퀀스를 수행하는 데 필요한 시간이 크게 줄어듭니다. <br> 결과적으로 성공 가능성도 크게 줄어듭니다.
+                        </div>
+                        <img src="IMG/1Cornyart.jpg" alt="코르넬리우스 유물 이미지">
+                    </td>
+                </tr>
+                <tr class="clickable-row">
+                    <td>
+                        <div class="image-title">실수 2: 아이작의 첫 번째 유물</div>
+                        <div class="step-description">아이작의 첫 번째 유물은 정확한 값을 가져야 합니다. <br> 이 유물은 팀 전체에 방어구 관통력을 제공합니다. <br> 이 유물은 충전하기 위해 마법 공격을 받아야 합니다. <br> 마법 공격은 OSH 구체에서 나옵니다. <br> 방어구 관통력이 너무 높거나 잘못된 레벨이면, <br> 코르넬리우스와 같은 다른 영웅들은 OSH에게 올바른 양의 피해를 줄 수 없을 것입니다. <br> 2025년 5월 현재 이 유물의 최적 값은 114입니다. <br> 이 수준 이상으로 올리는 것은 상황을 악화시킬 수 있습니다. <br> 하지만 118-120 레벨까지는 많은 경우 문제가 발생하지 않습니다.
+                        </div>
+                        <img src="IMG/2isaacart.jpg" alt="아이작 유물 이미지">
+                    </td>
+                </tr>
+                <tr class="clickable-row">
+                    <td>
+                        <div class="image-title">실수 3: 아이작 봄 스킨</div>
+                        <div class="step-description">아이작의 봄 스킨은 아이작의 방어구 관통력을 증가시킵니다. <br> 이는 재충전 구체를 너무 일찍 파괴할 위험을 증가시키기 때문에 단점입니다. <br> 첫 번째 유물보다도 더 나쁩니다. <br> 다른 영웅들에게 어떤 능력치도 제공하지 않기 때문입니다.
+                        </div>
+                        <img src="IMG/3isaacskin.jpg" alt="아이작 봄 스킨 이미지">
+                    </td>
+                </tr>
+                <tr class="clickable-row">
+                    <td>
+                        <div class="image-title">실수 4: 아이작의 두 번째 유물</div>
+                        <div class="step-description">아이작의 두 번째 유물은 물리 공격력과 방어구 관통력을 증가시킵니다. <br> 공격력 증가는 긍정적일 수도 있지만, <br> 방어구 관통력은 이전 지점에서 설명한 이유로 매우 해롭습니다.
+                        </div>
+                        <img src="IMG/5isaacaer2.jpg" alt="아이작 두 번째 유물 이미지">
+                    </td>
+                </tr>
+                <tr class="clickable-row">
+                    <td>
+                        <div class="image-title">실수 5: 아이작의 달 스킨</div>
+                        <div class="step-description">아이작의 달 스킨은 영웅의 마법 방어력을 증가시킵니다. <br> 많은 경우 허용 가능한 값 내에 있을 수 있습니다. <br> 그래도 업그레이드하지 않는 것을 권장합니다. <br> 마법 피해는 아이작이 충전하는 데 사용됩니다.
+                        </div>
+                        <img src="IMG/4isaacskin.jpg" alt="아이작 달 스킨 이미지">
+                        <div class="step-description">궁금한 점이 있다면 <br> 최고의 OSH 길드원에게 도움을 요청하세요 🤓
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // JavaScript to handle clickable rows (if they had data-link attributes)
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('.clickable-row');
+            rows.forEach(row => {
+                row.addEventListener('click', function() {
+                    const link = this.dataset.link;
+                    if (link) {
+                        window.open(link, '_blank');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
