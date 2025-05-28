@@ -1,0 +1,294 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #333; /* Medium/dark grey for body background */
+    color: #eee; /* Light text color for contrast */
+}
+h1 {
+    color: #eee; /* Ensure heading is visible on dark background */
+    text-align: center;
+}
+table {
+    width: 80%; /* Maintain overall table width */
+    max-width: 700px; /* Max width for the table */
+    border-collapse: collapse;
+    margin: 20px auto; /* Center the table */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    background-color: #555; /* Changed from #f2f2f2 to a darker grey */
+    table-layout: fixed; /* Forza la larghezza fissa delle colonne */
+}
+th, td {
+    border: 1px solid #777; /* Slightly lighter border on dark table */
+    padding: 12px;
+    text-align: left;
+    color: #eee; /* Light text color for table cells */
+    overflow: hidden; /* Nasconde il contenuto che eccede la larghezza fissa della cella */
+    text-overflow: ellipsis; /* Aggiunge "..." se il testo è troppo lungo (per celle di testo) */
+    white-space: nowrap; /* Previene il wrapping del testo nelle celle */
+    min-height: 50px; /* Altezza minima per le celle per consentire l'andare a capo nell'intestazione */
+}
+/* Darker grey for the second header row (prima era la prima, ora è l'unica) */
+thead tr:nth-child(1) th {
+    background-color: #444; /* Darker grey for header */
+    color: #eee; /* Light text for header */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f2f2f2; /* Light grey for input background (bianco ottico) */
+    color: #333; /* Dark text color for input */
+}
+
+/* Stile per la checkbox */
+input[type="checkbox"] {
+    width: 20px; /* Larghezza minima per la checkbox */
+    height: 20px; /* Altezza minima per la checkbox */
+    vertical-align: middle;
+    cursor: pointer;
+    display: block; /* Assicura che occupi il suo spazio e sia centrabile */
+    margin: 0 auto; /* Centra la checkbox orizzontalmente */
+}
+
+select { /* Stile per i dropdown */
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #666; /* Darker select background */
+    color: #eee; /* Light text color for select */
+}
+
+.highlight-row {
+    background-color: #d4edda; /* Verde chiaro per la riga evidenziata */
+}
+/* NUOVA CLASSE PER IL VERDE FISSO E TESTO NERO */
+.row-green-static {
+    background-color: #d4edda; /* Il verde chiaro che già usi per highlight-row */
+    color: black; /* Testo nero per leggibilità */
+}
+
+/* Nuovo stile per il div contenitore di orologio e countdown */
+#top-info-bar {
+    width: 80%; /* Stessa larghezza della tabella per allineamento visivo */
+    max-width: 700px; /* Stessa larghezza massima della tabella */
+    margin: 0 auto; /* Centra il div */
+    background-color: #444; /* Darker background for info bar */
+    color: #eee; /* Light text for info bar */
+    padding: 12px; /* Stesso padding delle celle della tabella */
+    display: flex; /* Utilizza flexbox per allineare gli elementi */
+    justify-content: space-between; /* Sposta un elemento a sinistra, l'altro a destra */
+    align-items: center; /* Centra verticalmente */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Stessa ombra della tabella */
+    border-radius: 4px 4px 0 0; /* Bordi arrotondati in alto */
+    margin-bottom: -1px; /* Per farla "incollare" alla tabella sottostante */
+    font-weight: bold;
+    flex-wrap: nowrap; /* Impedisce il wrapping del contenuto */
+}
+#current-time-display { /* ID per l'orologio */
+    text-align: left;
+    white-space: nowrap;
+    flex-shrink: 0; /* Impedisce che si rimpicciolisca */
+}
+#countdown-display { /* ID per il contenitore del countdown */
+    text-align: right;
+    white-space: nowrap;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px; /* Spazio tra label e timer */
+    flex-shrink: 0; /* Impedisce che si rimpicciolisca */
+}
+#countdown-label { /* Stile per la label del countdown (minions end in: ) */
+    font-size: 0.9em; /* Rendi leggermente più piccolo se necessario */
+}
+#countdown-timer-value { /* Stile per il valore del countdown (1 day, 02:30:15) */
+    /* Nessun white-space: nowrap qui, è già sul genitore */
+}
+
+
+/* Stili per la nuova tabella di configurazione */
+#configTable {
+    margin-top: 40px;
+    background-color: #555; /* Darker background for config table */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    width: 80%;
+    max-width: 700px;
+    margin: 40px auto 20px auto; /* Centra la tabella sotto l'altra */
+}
+#configTable th, #configTable td {
+    text-align: center;
+    color: #eee; /* Light text color for config table cells */
+}
+#configTable select { /* Stile per i dropdown nella tabella di configurazione */
+    width: calc(100% - 16px); /* Per input con padding */
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #666; /* Darker select background */
+    color: #eee; /* Light text color for select */
+}
+
+/* Colori generali per il testo degli alert che appare nel titolo */
+.alert-text-red {
+    color: red; /* Colore rosso fisso per Alert 1 */
+}
+.alert-text-blue-cyan {
+    color: #00BCD4; /* Colore blu chiaro fisso per Alert 3 */
+}
+.alert-text-blinking.green { /* Per alert 2 e 4 quando verdi */
+    color: #02FF14;
+}
+.alert-text-blinking.red { /* Per alert 2 e 4 quando rossi */
+    color: red;
+}
+
+/* Nuove classi per lo sfondo delle caselle "Alert Type" nella tabella di configurazione */
+.alert-type-background-red-fixed { /* Per Alert 1 */
+    background-color: red;
+    color: black; /* Testo nero su rosso */
+    font-weight: bold;
+}
+.alert-type-background-blue-cyan { /* Per Alert 3 */
+    background-color: #00BCD4;
+    color: black; /* Testo nero su blu/ciano */
+    font-weight: bold;
+}
+/* Classe per il lampeggio (Alert 2 e 4) */
+.alert-type-background-blinking.red {
+    background-color: red;
+    color: white; /* Testo bianco su rosso lampeggiante */
+    font-weight: bold;
+}
+.alert-type-background-blinking.green {
+    background-color: #02FF14;
+    color: black; /* Testo nero su verde lampeggiante */
+    font-weight: bold;
+}
+
+
+/* Nuove classi per le righe della tabella principale */
+.row-alert-red-fixed { /* Per Alert 1 */
+    background-color: red;
+    color: black; /* Testo nero su rosso fisso */
+}
+.row-alert-blue-cyan { /* Per Alert 3 */
+    background-color: #00BCD4;
+    color: black;
+}
+.row-alert-blinking.red { /* Per Alert 2 e 4 quando rossi */
+    background-color: red;
+    color: white;
+}
+.row-alert-blinking.green { /* Per Alert 2 e 4 quando verdi */
+    background-color: #02FF14;
+    color: black;
+}
+.row-dark-grey {
+    background-color: #A9A9A9; /* Grigio scuro */
+    color: white; /* Testo bianco per contrasto */
+}
+
+/* Stili per i nomi dei boss nell'intestazione */
+.isaac-text {
+    color: #8B4513; /* Mattone */
+    font-weight: normal;
+}
+.orion-text {
+    color: #0000FF; /* Blu Elettrico */
+    font-weight: normal;
+}
+.corvus-text {
+    color: #8A2BE2; /* Viola */
+    font-weight: normal;
+}
+.jhu-text {
+    color: #DC143C; /* Cremisi */
+    font-weight: normal;
+}
+.other-text {
+    color: #ADFF2F; /* Verde/Giallo */
+    font-weight: normal;
+}
+
+/* Stili per le checkbox personalizzate */
+.colored-checkbox-container {
+    display: flex; /* Rende le checkbox allineate orizzontalmente */
+    justify-content: space-around; /* Spazia uniformemente le checkbox */
+    align-items: center;
+    height: 100%; /* Occupa l'altezza della cella */
+    box-sizing: border-box;
+}
+
+.custom-checkbox {
+    /* Rimuovi l'aspetto predefinito della checkbox */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    width: 20px; /* Dimensione della checkbox */
+    height: 20px;
+    border: 2px solid; /* Il bordo colorato */
+    border-radius: 4px; /* Bordi leggermente arrotondati */
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative; /* Per posizionare il riempimento */
+    box-sizing: border-box;
+    background-color: white; /* Centro bianco quando non spuntata */
+    transition: background-color 0.1s, border-color 0.1s; /* Transizione fluida */
+}
+
+/* Stili per i colori del BORDO quando la checkbox NON è spuntata */
+.custom-checkbox.color-1 { border-color: #8B4513; } /* Isaac - Mattone */
+.custom-checkbox.color-2 { border-color: #0000FF; } /* Orion - Blu Elettrico */
+.custom-checkbox.color-3 { border-color: #8A2BE2; } /* Corvus - Viola */
+.custom-checkbox.color-4 { border-color: #DC143C; } /* JHU - Cremisi */
+.custom-checkbox.color-5 { border-color: #ADFF2F; } /* Other - Verde/Giallo */
+
+/* Stili per il RIEMPIMENTO quando la checkbox è spuntata */
+.custom-checkbox:checked {
+    border-color: transparent; /* Nasconde il bordo colorato quando è riempita */
+}
+
+.custom-checkbox.color-1:checked { background-color: #8B4513; }
+.custom-checkbox.color-2:checked { background-color: #0000FF; }
+.custom-checkbox.color-3:checked { background-color: #8A2BE2; }
+.custom-checkbox.color-4:checked { background-color: #DC143C; }
+.custom-checkbox.color-5:checked { background-color: #ADFF2F; }
+
+/* Icona di spunta (opzionale, per maggiore chiarezza visiva) */
+.custom-checkbox:checked::after {
+    content: '✔'; /* Un segno di spunta Unicode */
+    color: white; /* Colore della spunta */
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Classe per nascondere elementi */
+.hidden {
+    display: none;
+}
+
+/* Colore arancione per il testo in quarta colonna e il numero di attacchi */
+.orange-text {
+    color: #FFA500; /* Arancione */
+}
+
+/* Stile per il numero di attacchi in modalità boss */
+.boss-attacks-count {
+    font-size: 2em; /* Dimensioni doppie */
+    color: #FFA500; /* Arancione */
+    display: block; /* Per assicurarsi che lo stile si applichi correttamente */
+    text-align: center; /* Centra il numero */
+    line-height: 1; /* Rimuovi spazio extra sopra/sotto per centrarlo meglio */
+}

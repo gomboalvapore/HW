@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asgard Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 id="guild-data-heading">Asgard Manager
+        <span id="starts-in-alert" class="alert-red" style="font-size: 1em;"></span>
+        <span id="starts-in-blinking-alert" style="font-size: 1em;"></span>
+        <span id="ends-in-alert" class="alert-red" style="font-size: 1em;"></span>
+        <span id="starts-in-blinking-alert4" style="font-size: 1em;"></span>
+    </h1>
+
+    <div id="top-info-bar">
+        <span id="current-time-display"></span>
+        <span id="countdown-display">
+            <span id="countdown-label"></span>
+            <span id="countdown-timer-value"></span>
+        </span>
+    </div>
+
+    <table id="guildTable">
+        <colgroup>
+            <col id="col-checkbox" style="width: 30px;">
+            <col id="col-playername" style="width: 300px;">
+            <col id="col-attacks" style="width: 80px;">
+            <col id="col-minions-boss" style="width: 80px;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Player name</th>
+                <th id="attacks-header">Attacks</th>
+                <th id="minions-boss-header">
+                    </th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <h2 style="color: #eee; text-align: center; margin-top: 40px;">Alert Configuration</h2>
+    <table id="configTable">
+        <thead>
+            <tr>
+                <th>Alert Type</th>
+                <th>Countdown<br> Reference</th>
+                <th>Lower Bound</th>
+                <th>Upper Bound</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="alert1-type-cell">Alert 1<br> (Non-Blink)</td>
+                <td>
+                    <select id="alert1CountdownRef">
+                        <option value="minions end in">minions end in</option>
+                        <option value="boss ends in">boss ends in</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="alert1LowerBound"></select>
+                </td>
+                <td>
+                    <select id="alert1UpperBound"></select>
+                </td>
+            </tr>
+            <tr>
+                <td id="alert2-type-cell">Alert 2<br> (Blinking)</td>
+                <td>
+                    <select id="alert2CountdownRef">
+                        <option value="minions end in">minions end in</option>
+                        <option value="boss ends in">boss ends in</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="alert2LowerBound"></select>
+                </td>
+                <td>
+                    <select id="alert2UpperBound"></select>
+                </td>
+            </tr>
+            <tr>
+                <td id="alert3-type-cell">Alert 3<br> (Non-Blink)</td>
+                <td>
+                    <select id="alert3CountdownRef">
+                        <option value="minions end in">minions end in</option>
+                        <option value="boss ends in">boss ends in</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="alert3LowerBound"></select>
+                </td>
+                <td>
+                    <select id="alert3UpperBound"></select>
+                </td>
+            </tr>
+            <tr>
+                <td id="alert4-type-cell">Alert 4<br> (Blinking)</td>
+                <td>
+                    <select id="alert4CountdownRef">
+                        <option value="minions end in">minions end in</option>
+                        <option value="boss ends in">boss ends in</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="alert4LowerBound"></select>
+                </td>
+                <td>
+                    <select id="alert4UpperBound"></select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <button id="toggleTesterTools" style="padding: 10px 20px; background-color: #555; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Tester Tools
+        </button>
+    </div>
+
+    <div id="time-simulation-controls" class="hidden" style="margin-top: 20px; text-align: center; padding: 20px; background-color: #444; border-radius: 8px;">
+        <h2 style="color: #eee;">Time Simulation (for Testing)</h2>
+        <div style="margin-bottom: 10px;">
+            <label for="simulateDays" style="color: #eee; margin-right: 10px;">Simulate Days:</label>
+            <input type="number" id="simulateDays" value="0" min="-100" max="100" style="width: 60px; padding: 5px; border-radius: 4px; border: 1px solid #666; background-color: #555; color: #eee;">
+            <label for="simulateHours" style="color: #eee; margin-right: 10px; margin-left: 20px;">Simulate Hours:</label>
+            <input type="number" id="simulateHours" value="0" min="-100" max="100" style="width: 60px; padding: 5px; border-radius: 4px; border: 1px solid #666; background-color: #555; color: #eee;">
+        </div>
+        <div>
+            <button id="applySimulation" style="padding: 10px 20px; margin: 5px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Apply Simulation</button>
+            <button id="resetSimulation" style="padding: 10px 20px; margin: 5px; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer;">Reset Simulation</button>
+        </div>
+        <p id="simulated-time-display" style="color: #ccc; margin-top: 15px;">Current simulated offset: 0 days, 0 hours.</p>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
