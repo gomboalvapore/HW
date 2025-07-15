@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Table</title>
+    <style>
+        body {
+            background-color: #a9a9a9;
+        }
+
+        table {
+            width: fit-content;
+            margin: 20px auto;
+            border-collapse: collapse;
+            max-width: calc(100% - 120px);
+            background-color: #d3d3d3;
+        }
+
+        td {
+            padding: 2px;
+            border: 1px solid #ddd;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .image-cell {
+            width: 100px;
+            height: 100px;
+        }
+
+        .image-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .image-name {
+            font-size: 3em;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .checkbox-cell {
+            text-align: center;
+            height: 50px;
+        }
+
+        .checkbox-cell input[type="checkbox"] {
+            transform: scale(3);
+        }
+
+        #zoom-select {
+            width: 200px;
+            height: 40px;
+            font-size: 1.8em;
+        }
+
+        #export-code {
+            font-size: 1.4em;
+            font-family: monospace;
+        }
+
+        #copy-button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #import-code {
+            font-size: 1.0em;
+            width: 12ch;
+        }
+
+        /* New style to increase the size of "Import Code:" */
+        table tr:nth-child(2) td:first-child {
+            font-size: 1.7em;
+        }
+
+        #apply-button {
+            padding: 10px 20px;
+            /* Doubled padding */
+            cursor: pointer;
+            font-size: 0.9em;
+            /* Doubled font-size */
+        }
+
+        #code-length-feedback {
+            font-size: 1.2em;
+            margin-left: 10px;
+        }
+
+        /* Styles for the last row */
+        table tr:last-child td {
+            font-size: 1.5em;
+        }
+
+        table tr:last-child #copy-button {
+            padding: 7.5px 15px;
+            font-size: 1.5em;
+        }
+
+        /* Style for dark gray background */
+        .dark-gray-bg {
+            background-color: #333333;
+            color: white;
+            /* Optional: to make text readable on dark background */
+        }
+
+        /* Style for medium-dark gray background */
+        .medium-dark-gray-bg {
+            background-color: #666666;
+            color: white;
+            /* Optional: to make text readable on dark background */
+        }
+
+        /* Brighter colors for feedback */
+        .feedback-green {
+            color: #00FF00;
+            /* Bright green */
+        }
+
+        .feedback-red {
+            color: #FF4500;
+            /* Bright red-orange */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr class="dark-gray-bg">
+            <td colspan="3">
+                <select id="zoom-select" onchange="applyZoom()">
+                    <option value="1">Zoom 100%</option>
+                    <option value="0.75">Zoom 75%</option>
+                    <option value="0.66">Zoom 66%</option>  <option value="0.5">Zoom 50%</option>
+                    <option value="1.5">Zoom 150%</option>
+                </select>
+            </td>
+        </tr>
+        <tr class="dark-gray-bg">
+            <td colspan="2">
+                Import Code: <input type="text" id="import-code" maxlength="12" oninput="updateCodeLength()">
+                <button id="apply-button">Apply</button>
+            </td>
+            <td>
+                <span id="code-length-feedback"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="image-cell"><img src="IMG/hero1.JPG" alt="hero1.JPG"></td>
+            <td><span class="image-name">Satori</span></td>
+            <td class="checkbox-cell"><input type="checkbox" onchange="updateRowColor(this)"></td>
+        </tr>
+        <tr>
+            <td class="image-cell"><img src="IMG/hero1.JPG" alt="hero1.JPG"></td>
+            <td><span class="image-name">Dante</span></td>
+            <td class="checkbox-cell"><input type="checkbox" onchange="updateRowColor(this)"></td>
+        </tr>
+        <tr>
+            <td class="image-cell"><img src="IMG/hero1.JPG" alt="hero1.JPG"></td>
+            <td><span class="image-name">Heidi</span></td>
+            <td class="checkbox-cell"><input type="checkbox" onchange="updateRowColor(this)"></td>
+        </tr>
+        <tr>
+            <td class="image-cell"><img src="IMG/hero1.JPG" alt="hero1.JPG"></td>
+            <td><span class="image-name">Helios</span></td>
+            <td class="checkbox-cell"><input type="checkbox" onchange="updateRowColor(this)"></td>
+        </tr>
+        <tr>
+            <td class="image-cell"><img src="IMG/hero1.JPG" alt="hero1.JPG"></td>
+            <td><span class="image-name">Ismahel</span></td>
+            <td class="checkbox-cell"><input type="checkbox" onchange="updateRowColor(this)"></td>
+        </tr>
+        <tr>
+            <td class="image-cell"><img src="IMG/hero1.JPG" alt="hero1.JPG"></td>
+            <td><span class="image-name">Kark</span></td>
+            <td class="checkbox-cell"><input type="checkbox" onchange="updateRowColor(this)"></td>
+        </tr>
+        <tr>
+            <td class="image-cell"><img src="IMG/hero1.JPG" alt="hero1.JPG"></td>
+            <td><span class="image-name">Lyria</span></td>
+            <td class="checkbox-cell"><input type="checkbox" onchange="updateRowColor(this)"></td>
+        </tr>
+        <tr>
+            <td class="image-cell"><img src="IMG/hero1.JPG" alt="hero1.JPG"></td>
+            <td><span class="image-name">Nebula</span></td>
+            <td class="checkbox-cell"><input type="checkbox" onchange="updateRowColor(this)"></td>
+        </tr>
+        <tr>
+            <td class="image-cell"><img src="IMG/hero1.JPG" alt="hero1.JPG"></td>
+            <td><span class="image-name">Peppy</span></td>
+            <td class="checkbox-cell"><input type="checkbox" onchange="updateRowColor(this)"></td>
+        </tr>
+        <tr>
+            <td class="image-cell"><img src="IMG/hero1.JPG" alt="hero1.JPG"></td>
+            <td><span class="image-name">Yasmine</span></td>
+            <td class="checkbox-cell"><input type="checkbox" onchange="updateRowColor(this)"></td>
+        </tr>
+        <tr>
+            <td class="image-cell"><img src="hero1.JPG" alt="hero1"></td>
+            <td><span class="image-name">Corvus</span></td>
+            <td class="checkbox-cell"><input type="checkbox" onchange="updateRowColor(this)"></td>
+        </tr>
+        <tr class="dark-gray-bg">
+            <td colspan="2">Export Code: <span id="export-code"></span></td>
+            <td><button id="copy-button">Copy</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function applyZoom(initialLoad) {
+            let zoomSelect = document.getElementById("zoom-select");
+            let zoomLevel = zoomSelect.value;
+
+            document.body.style.zoom = zoomLevel;
+
+            if (!initialLoad) {
+                localStorage.setItem('zoomLevel', zoomLevel);
+            }
+        }
+
+        function generateBinaryCode() {
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            if (checkboxes.length !== 11) { // Changed to 11
+                alert("Error: Table structure is incorrect. Expected 11 checkboxes.");
+                return;
+            }
+            let binaryCode = "";
+            checkboxes.forEach(checkbox => {
+                binaryCode += checkbox.checked ? "1" : "0";
+            });
+            document.getElementById("export-code").textContent = binaryCode;
+        }
+
+        function applyBinaryCode() {
+            let importCode = document.getElementById("import-code").value;
+            console.log("1. Inizio - importCode:", importCode, "| Lunghezza:", importCode.length);
+
+            importCode = importCode.trim();
+            console.log("2. Dopo trim() - importCode:", importCode, "| Lunghezza:", importCode.length);
+
+            importCode = importCode.replace(/[^01]/g, '');
+            console.log("3. Dopo replace() - importCode:", importCode, "| Lunghezza:", importCode.length);
+
+            if (importCode.length !== 11) {
+                console.log("4. Validazione fallita - importCode:", importCode, "| Lunghezza:", importCode.length);
+                alert("Invalid code. Please enter a 11-digit binary code.");
+                return;
+            }
+
+            console.log("5. Validazione superata - importCode:", importCode, "| Lunghezza:", importCode.length);
+
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            for (let i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = importCode[i] === '1';
+                updateRowColor(checkboxes[i]); // Apply color after setting checkbox
+            }
+
+            generateBinaryCode();
+            console.log("6. generateBinaryCode() executed");
+        }
+
+        function updateCodeLength() {
+            let importCode = document.getElementById("import-code").value;
+            let feedbackElement = document.getElementById("code-length-feedback");
+            if (importCode.length < 3) {
+                feedbackElement.textContent = "";
+            } else {
+                feedbackElement.textContent = importCode.length + " digits"; // Just show digits
+                feedbackElement.className = importCode.length === 11 ? "feedback-green" : "feedback-red";
+            }
+        }
+
+        generateBinaryCode();
+
+        document.getElementById("copy-button").addEventListener("click", () => {
+            const codeElement = document.getElementById("export-code");
+            const codeToCopy = codeElement.textContent;
+
+            navigator.clipboard.writeText(codeToCopy)
+                .then(() => {
+                    alert("Code copied to clipboard!");
+                })
+                .catch(err => {
+                    console.error("Failed to copy text: ", err);
+                    alert("Copy failed. Please copy manually.");
+                });
+        });
+
+        function updateRowColor(checkbox) {
+            let row = checkbox.parentNode.parentNode;
+            if (checkbox.checked) {
+                row.classList.add("medium-dark-gray-bg");
+            } else {
+                row.classList.remove("medium-dark-gray-bg");
+            }
+            generateBinaryCode();
+        }
+
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                updateRowColor(this);
+                generateBinaryCode();
+            });
+        });
+
+        document.getElementById("apply-button").addEventListener("click", applyBinaryCode);
+
+        // Load saved zoom level
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let savedZoomLevel = localStorage.getItem('zoomLevel');
+            if (savedZoomLevel) {
+                document.getElementById("zoom-select").value = savedZoomLevel;
+                applyZoom(true); // Apply zoom without saving again
+            }
+        });
+    </script>
+
+</body>
+
+</html>
