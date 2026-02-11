@@ -20,6 +20,7 @@
             border-radius: 12px;
             background: #42414d;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            width: 320px;
         }
         #countdown {
             font-size: 3rem;
@@ -30,6 +31,24 @@
         .url-info {
             font-size: 0.9rem;
             color: #b1b1b3;
+            margin-bottom: 1.5rem;
+        }
+        /* Stile del Bottone */
+        #pauseBtn {
+            background-color: #00ddff;
+            color: #2b2a33;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        #pauseBtn:hover {
+            background-color: #00b8d4;
+        }
+        #pauseBtn.paused {
+            background-color: #ffbd4f;
         }
     </style>
 </head>
@@ -38,25 +57,48 @@
     <div class="card">
         <h2>Assegnazione Container...</h2>
         <p>Reindirizzamento automatico tra:</p>
-        <div id="countdown">100</div>
+        <div id="countdown">10</div>
         <p class="url-info">Destinazione: <strong>Google.com</strong></p>
+        
+        <button id="pauseBtn">Pausa</button>
     </div>
 
     <script>
-        let seconds = 100;
+        let seconds = 10;
+        let timer = null;
+        let isPaused = false;
+        
         const display = document.querySelector('#countdown');
+        const btn = document.querySelector('#pauseBtn');
 
-        const timer = setInterval(() => {
-            seconds--;
-            display.textContent = seconds;
+        function startTimer() {
+            timer = setInterval(() => {
+                if (!isPaused) {
+                    seconds--;
+                    display.textContent = seconds;
 
-            if (seconds <= 0) {
-                clearInterval(timer);
-                // Utilizziamo replace per non sporcare la cronologia
-                window.location.replace("https://www.google.com");
+                    if (seconds <= 0) {
+                        clearInterval(timer);
+                        window.location.replace("https://www.google.com");
+                    }
+                }
+            }, 1000);
+        }
+
+        btn.addEventListener('click', () => {
+            isPaused = !isPaused; // Inverte lo stato
+            
+            if (isPaused) {
+                btn.textContent = "Riprendi";
+                btn.classList.add('paused');
+            } else {
+                btn.textContent = "Pausa";
+                btn.classList.remove('paused');
             }
-        }, 1000);
+        });
+
+        // Avvio iniziale
+        startTimer();
     </script>
 </body>
-
 </html>
